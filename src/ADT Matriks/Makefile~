@@ -1,0 +1,7 @@
+target: matbool matchar
+
+matbool: matbool.c mmatbool.c matbool.h ../ADT\ Boolean/boolean.h
+	gcc matbool.c mmatbool.c -o matbool
+
+matchar: matchar.c mmatchar.c matchar.h ../ADT\ Mesin\ Kata/mesinkata1.c ../ADT\ Mesin\ Kata/mesinkata1.h ../ADT\ Mesin\ Kata/mesinkar1.c ../ADT\ Mesin\ Kata/mesinkar1.h
+	gcc matchar.c mmatchar.c ../ADT\ Mesin\ Kata/mesinkata1.c ../ADT\ Mesin\ Kata/mesinkar1.c -o matchar

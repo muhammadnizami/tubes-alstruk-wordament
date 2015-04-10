@@ -1,0 +1,2 @@
+set: mset.c set.c ../ADT\ Mesin\ Kata/mesinkata1.c ../ADT\ Mesin\ Kata/mesinkar1.c set.h ../ADT\ Mesin\ Kata/mesinkata1.h ../ADT\ Mesin\ Kata/mesinkar1.h ../ADT\ Boolean/boolean.h
+	gcc mset.c set.c ../ADT\ Mesin\ Kata/mesinkata1.c ../ADT\ Mesin\ Kata/mesinkar1.c -lm -o set

@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "multilist.h"
+
+int main(){
+//Kamus Lokal
+	List tes;
+	InfoUser X;
+//Algoritma
+	CreateList(&tes);
+	printf("List Kosong : %d\n",IsListEmpty (tes));
+	printf("Masukkan nama user \n");
+	scanf("%s",&X.usr);
+	printf("%s\n", X.usr);
+	InsVUser(&tes,X);
+	printf("%x\n", FindUser(&tes,X));
+	InsVScore0(&tes,X,100000);
+	PrintUser(FindUser(&tes,X));
+	return 0;
+}

@@ -1,0 +1,3 @@
+arraymengecil: arraymengecil.c marraymengecil.c ../ADT\ Mesin\ Kata/mesinkata1.c ../ADT\ Mesin\ Kata/mesinkar1.c ../ADT\ Jam\ +\ Tanggal/waktu.c ../ADT\ Jam\ +\ Tanggal/jam.c ../ADT\ Jam\ +\ Tanggal/tanggal.c arraymengecil.h ../ADT\ Mesin\ Kata/mesinkata1.h ../ADT\ Mesin\ Kata/mesinkar1.h ../ADT\ Jam\ +\ Tanggal/waktu.h ../ADT\ Jam\ +\ Tanggal/jam.h ../ADT\ Jam\ +\ Tanggal/tanggal.h ../ADT\ Boolean/boolean.h ..
+	gcc arraymengecil.c marraymengecil.c ../ADT\ Mesin\ Kata/mesinkata1.c ../ADT\ Mesin\ Kata/mesinkar1.c ../ADT\ Jam\ +\ Tanggal/waktu.c ../ADT\ Jam\ +\ Tanggal/jam.c ../ADT\ Jam\ +\ Tanggal/tanggal.c -lm -o arraymengecil
+

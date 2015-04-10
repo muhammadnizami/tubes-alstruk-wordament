@@ -1,0 +1,32 @@
+/*MATRIKS 4*4 dengan infotype boolean*/
+/*indeks 1..4*/
+
+#ifndef matbool_h
+#define matbool_h
+
+#include "../ADT Boolean/boolean.h"
+
+#ifndef Nil
+#define Nil 0
+#endif
+
+typedef struct {
+	boolean T[5][5];
+}matbool;
+
+matbool mbCreateEmpty();
+//mengembalikan matriks berisi Nil
+
+boolean mbGetElmt(matbool M, int row, int col);
+//prekondisi: M bukan berisi Nil
+//mengembalikan isi
+
+void mbSetElmt(matbool *M, int row, int col, boolean X);
+//I.S. M terdefinisi
+//F.S. M.T[row][col] berisi X
+
+void mpPutar(matbool * M);
+/*I.S.	M sebarang*/
+/*F.S.	M diputar 90 derajat CW*/
+
+#endif

@@ -1,0 +1,48 @@
+#include "stackpoint.h"
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+
+int main(){
+	srand(time(NULL));
+	stackpoint S;
+	spinfotype X;
+	int i,j;
+	spCreateEmpty(&S);
+	printf("spIsEmpty:%x\n",spIsEmpty(S));
+	for (i=1;i<=10;i++)
+	for (j=1;j<=10;j++){
+		X=MakePOINT(i,j);
+		printf("pushing ");
+		TulisPOINT(X);printf(" to stack\n");
+		spPush(&S,i);
+	}
+	printf("spIsEmpty:%x\n",spIsEmpty(S));
+	for (i=1;i<=10;i++)
+	for (j=1;j<=10;j++){
+		X=MakePOINT(i,j);
+		spPop(&S,&X);
+		printf("pop:");TulisPOINT(X);printf("\n");
+	}
+	printf("spIsEmpty:%x\n",spIsEmpty(S));
+	for (i=1;i<=5;i++){
+		X=MakePOINT(rand(),rand());
+		printf("pushing ");
+		TulisPOINT(X);printf(" to stack\n");
+		spPush(&S,X);
+	}
+	printf("spIsEmpty:%x\n",spIsEmpty(S));
+	for (i=1;i<=5;i++){
+		X=MakePOINT(rand(),rand());
+		printf("pushing ");
+		TulisPOINT(X);printf(" to stack\n");
+		spPush(&S,X);
+	}
+	printf("spIsEmpty:%x\n",spIsEmpty(S));
+	for (i=1;i<=10;i++){
+		spPop(&S,&X);
+		printf("pop:");TulisPOINT(X);printf("\n");
+	}
+	printf("spIsEmpty:%x\n",spIsEmpty(S));
+	return 0;
+}

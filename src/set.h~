@@ -1,0 +1,80 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include "boolean.h"
+#include "mesinkar1.h"
+#include "mesinkata1.h"
+
+#ifndef SET_H
+#define SET_H
+
+#ifndef Nil
+#define Nil NULL
+#endif
+
+#define Info(P) (P)->Info
+#define Next(P) (P)->Next
+#define First(S) ((S).First)
+#define Last(S) ((S).Last)
+
+typedef Kata infotype;
+typedef struct ElmtListSET *seteladdress;
+typedef struct ElmtListSET{
+	seteladdress Next;
+	infotype Info;
+} ElmtListSET;
+typedef struct{
+	seteladdress First;
+	seteladdress Last;
+} SET;
+
+boolean isSETChanged;
+
+void CreateEmptySET(SET *s);
+/* I.S. sembarang */
+/* F.S. membentuk set kosong dengan First = Nil */
+
+void LoadSET(SET *s, char *namafile);
+/* I.S. s kosong */
+/* F.S. Membaca data dari file eksternal sehingga seluruh data dari file eksternal disimpan */
+/*     ke dalam s selama belum mencapai end of file (.)*/
+
+seteladdress AlokasiElmtSET(infotype X);
+/* mengalokasi memori untuk X, jika gagal menghasilkan Nil*/
+
+void DealokasiElmtSET(seteladdress P);
+/* I.S. P menunjuk element set*/
+/* F.S. P didealokasi*/
+
+void InsertElmtSET(SET *s, infotype X);
+/* I.S. X belum ada di s */
+/* F.S. menambahkan X pada s */
+
+void InsertElmtUniqueSET(SET *s, infotype X);
+/* I.S. sembarang */
+/* F.S. menambahkan X pada s jika belum ada */
+
+boolean IsEmptySET(SET s);
+/* menghasilkan true jika list empty */
+
+boolean IsMemberSET(SET s, Kata K);
+/* menghasilkan true jika K adalah member s */
+
+int NbElmtSET(SET s);
+/* menghasilkan jumlah elemen SET s */
+
+void CopySET(SET s1, SET *s2);
+/* I.S. s1 adalah set, mungkin kosong */
+/* F.S. s2 berisi salinan s1 dengan alokasi memori */
+
+void UnionSET(SET s1, SET s2, SET *s3);
+/* I.S. s1 dan s2 adalah set, mungkin kosong */
+/* F.S. s3 berisi hasil gabungan s1 dan s2 */
+
+void PrintSET(SET s);
+/* I.S. s sembarang, boleh kosong */
+/* F.S. seluruh isi s dicetak, jika kosong dituliskan list kosong */
+
+void DeleteSet(SET * s);
+/* I.S. s terdefinisi */
+/* F.S. s kosong */
+#endif

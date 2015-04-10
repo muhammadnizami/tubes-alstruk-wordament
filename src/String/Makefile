@@ -1,0 +1,2 @@
+string: _string.c _string.h m_string.c ../ADT\ Boolean
+	gcc _string.c m_string.c -o string
